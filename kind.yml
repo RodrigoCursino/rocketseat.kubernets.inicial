@@ -1,0 +1,12 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+
+nodes:
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+
+# criação de um cluster com 1 nó de controle e 1 nó de trabalho
+# para criar o cluster, salve este arquivo como kind.yml e execute o comando:
+# kind create cluster --config kind.yml --name=terceiro-cluster-rocketseat

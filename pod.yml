@@ -1,0 +1,25 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: nginx
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx:stable-alpine-slim
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: 64Mi
+        cpu: 100m
+      limits:
+        memory: 128Mi
+        cpu: 200m
+
+# criação de um pod com 1 contêiner nginx
+# para criar o pod, salve este arquivo como pod.yml e execute o comando:
+# kubectl apply -f pod.yml -n primeira-app
+# kubectl port-forward pod/nginx -n primeira-app 8081:80

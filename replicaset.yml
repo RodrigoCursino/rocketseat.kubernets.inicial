@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+
+metadata:
+  name: nginx
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27.1-alpine-slim
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+
+# criação de um replicaset com 2 réplicas do contêiner nginx
+# para criar o replicaset, salve este arquivo como replicaset.yml e execute o comando:
+# kubectl apply -f replicaset.yml -n primeira-app
