@@ -119,5 +119,7 @@
     - Verify metrics:
     ```bash
     kubectl get po -n kube-system
+    # vericando metricas pelo namespace
+    kubectl top po -n primeira-aplicacao
     ```
 
