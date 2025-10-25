@@ -110,7 +110,7 @@
     - link: https://github.com/kubernetes-sigs/metrics-server
     - Kubelet certificate needs to be signed by cluster Certificate Authority (or disable certificate validation by passing --kubelet-insecure-tls to  Metrics Server)
     ```bash
-    #local na pasta do projeto
+    #local - configure o arquivo com o --kubelet-insecure-tls - segue o exemplo no arquivo metrics-server.yml
     wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
     #env
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
